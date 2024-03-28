@@ -5,19 +5,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreWarehouse.API", "StoreWarehouse.API\StoreWarehouse.API.csproj", "{8A888418-2885-445C-9A7A-A1A6C7132AED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockManagement.Job", "StockManagement.Job\StockManagement.Job.csproj", "{6A926023-25FF-46C2-9475-8E5768A7E91D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreWarehouse.Domain", "StoreWarehouse.Domain\StoreWarehouse.Domain.csproj", "{AF183587-4E88-49B0-9803-BD221FA4D0B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainWarehouse", "MainWarehouse\MainWarehouse.csproj", "{1702195D-4E75-441E-A610-7796616C2D3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreWarehouse.Infra", "StoreWarehouse.Infra\StoreWarehouse.Infra.csproj", "{0BF4090F-2B85-4489-AA8C-94006F4AED4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreWarehouse.Domain", "StoreWarehouse.Domain\StoreWarehouse.Domain.csproj", "{AF183587-4E88-49B0-9803-BD221FA4D0B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreWarehouse.Worker", "StoreWarehouse.Worker\StoreWarehouse.Worker.csproj", "{8447E464-67E0-4DEB-8FB9-3F8A34190176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreWarehouse.Infra", "StoreWarehouse.Infra\StoreWarehouse.Infra.csproj", "{0BF4090F-2B85-4489-AA8C-94006F4AED4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreWarehouse.Application", "StoreWarehouse.Application\StoreWarehouse.Application.csproj", "{3F809BB3-3EF7-4F78-A852-589C9002A5A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreWarehouse.Worker", "StoreWarehouse.Worker\StoreWarehouse.Worker.csproj", "{8447E464-67E0-4DEB-8FB9-3F8A34190176}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreWarehouse.Application", "StoreWarehouse.Application\StoreWarehouse.Application.csproj", "{3F809BB3-3EF7-4F78-A852-589C9002A5A8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreWarehouse.Infra.CrossCutting.IoC", "StoreWarehouse.Infra.CrossCutting.IoC\StoreWarehouse.Infra.CrossCutting.IoC.csproj", "{6EC3373F-C5EB-45E9-8F13-12DF409C7A8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreWarehouse.Infra.CrossCutting.IoC", "StoreWarehouse.Infra.CrossCutting.IoC\StoreWarehouse.Infra.CrossCutting.IoC.csproj", "{6EC3373F-C5EB-45E9-8F13-12DF409C7A8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +25,6 @@ Global
 		{8A888418-2885-445C-9A7A-A1A6C7132AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A888418-2885-445C-9A7A-A1A6C7132AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A888418-2885-445C-9A7A-A1A6C7132AED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A926023-25FF-46C2-9475-8E5768A7E91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A926023-25FF-46C2-9475-8E5768A7E91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A926023-25FF-46C2-9475-8E5768A7E91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A926023-25FF-46C2-9475-8E5768A7E91D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1702195D-4E75-441E-A610-7796616C2D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1702195D-4E75-441E-A610-7796616C2D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1702195D-4E75-441E-A610-7796616C2D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1702195D-4E75-441E-A610-7796616C2D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF183587-4E88-49B0-9803-BD221FA4D0B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF183587-4E88-49B0-9803-BD221FA4D0B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF183587-4E88-49B0-9803-BD221FA4D0B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
