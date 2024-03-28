@@ -48,7 +48,7 @@ StoreWarehouse.API
     FROM [dbo].[ProductTrack]
     GO
     ```
-  - To see the requests published by the producer, access ```http://localhost:15672/```
+- To see the requests published by the producer, access ```http://localhost:15672/```
 
 ## Technologies implemented:
 
