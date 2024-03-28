@@ -1,4 +1,8 @@
 version: '3.8'
+
+networks:
+  app-network:
+  
 services:
   rabbitmq:
     container_name: "rabbitmq"
@@ -11,3 +15,15 @@ services:
       - '5672:5672'
       # Web inteface
       - '15672:15672'
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver
+    ports:
+      - 8002:1433
+    environment:
+      SA_PASSWORD: "Docker#1234"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    # volumes:
+    #   - ./script:/docker-entrypoint-initdb.d

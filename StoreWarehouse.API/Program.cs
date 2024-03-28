@@ -28,11 +28,12 @@ builder.Services.AddTransient<IProductTrackRepository, ProductTrackRepository>()
 
 var app = builder.Build();
 
-using (var serviceScope = app.Services.CreateScope())
-{
-    var serviceDb = serviceScope.ServiceProvider.GetService<DataContext>();
-    serviceDb.Database.Migrate();
-}
+
+//using (var serviceScope = app.Services.CreateScope())
+//{
+//    var serviceDb = serviceScope.ServiceProvider.GetService<DataContext>();
+//    serviceDb.Database.Migrate();
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

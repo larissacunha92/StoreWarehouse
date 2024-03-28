@@ -7,13 +7,13 @@ namespace StoreWarehouse.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ProductController : ControllerBase
+public class ProductTrackController : ControllerBase
 {
 
-    private readonly ILogger<ProductController> _logger;
+    private readonly ILogger<ProductTrackController> _logger;
     private readonly IProductTrackService _productService;
 
-    public ProductController(ILogger<ProductController> logger, IProductTrackService productService)
+    public ProductTrackController(ILogger<ProductTrackController> logger, IProductTrackService productService)
     {
         _logger = logger;
         _productService = productService;
