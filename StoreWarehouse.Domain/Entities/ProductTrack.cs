@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StoreWarehouse.Domain.Entities
+﻿namespace StoreWarehouse.Domain.Entities
 {
     public class ProductTrack
     {

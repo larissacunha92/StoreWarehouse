@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using StoreWarehouse.API.Configuration;
+using StoreWarehouse.Domain.Interfaces;
+using StoreWarehouse.Infra.Data;
+using StoreWarehouse.Infra.Data.Repositories;
 using StoreWarehouse.Worker.Producer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,8 +15,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDependencyInjectionConfiguration();
-builder.Services.AddDbContext<DbContext>(optionsAction: options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString(name: "DefaultConnection"), sqlServerOptions => sqlServerOptions.MigrationsAssembly("StoreWarehouse.Infra")));
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+builder.Services.AddTransient<IProductTrackRepository, ProductTrackRepository>();
 
 var app = builder.Build();
 

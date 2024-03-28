@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StoreWarehouse.Application.Interfaces;
 using StoreWarehouse.Domain.Entities;
+using StoreWarehouse.Infra.Data;
 
 namespace StoreWarehouse.API.Controllers;
 
@@ -10,21 +11,23 @@ public class ProductController : ControllerBase
 {
 
     private readonly ILogger<ProductController> _logger;
-    private readonly IProductService _productService;
+    private readonly IProductTrackService _productService;
 
-    public ProductController(ILogger<ProductController> logger, IProductService productService)
+    public ProductController(ILogger<ProductController> logger, IProductTrackService productService)
     {
         _logger = logger;
         _productService = productService;
     }
 
     [HttpPost]
-    public IActionResult CreateProduct(Product product)
+    public IActionResult CreateProductTrack(ProductTrack product)
     {
         if (!ModelState.IsValid)
             return BadRequest();
 
-        _productService.PublishProduct(product);
+        _productService.CreateProductTrack(product);
+        _productService.PublishProductTrack(product);
+
         return Ok();
     }
 }
