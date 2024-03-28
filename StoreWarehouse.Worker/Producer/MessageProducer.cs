@@ -2,7 +2,7 @@ using System.Text.Json;
 using RabbitMQ.Client;
 using System.Text;
 
-namespace StorewWarehouse.API.Services;
+namespace StoreWarehouse.Worker.Producer;
 
 public class MessageProducer : IMessageProducer
 {

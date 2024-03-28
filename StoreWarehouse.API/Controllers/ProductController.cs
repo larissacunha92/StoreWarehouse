@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using StoreWarehouse.API.Models;
-using StorewWarehouse.API.Services;
+using StoreWarehouse.Application.Interfaces;
+using StoreWarehouse.Domain.Entities;
 
 namespace StoreWarehouse.API.Controllers;
 
@@ -10,26 +10,21 @@ public class ProductController : ControllerBase
 {
 
     private readonly ILogger<ProductController> _logger;
-    private readonly IMessageProducer _messageProducer;
+    private readonly IProductService _productService;
 
-    //In-Memory db
-    public static readonly List<Product> _products = new();
-
-    public ProductController(ILogger<ProductController> logger, IMessageProducer messageProducer)
+    public ProductController(ILogger<ProductController> logger, IProductService productService)
     {
         _logger = logger;
-        _messageProducer = messageProducer;
+        _productService = productService;
     }
 
     [HttpPost]
-    public IActionResult CreateProduct(Product newProduct)
+    public IActionResult CreateProduct(Product product)
     {
-      if (!ModelState.IsValid) 
-        return BadRequest();
+        if (!ModelState.IsValid)
+            return BadRequest();
 
-      _products.Add(newProduct);
-      _messageProducer.SendMessage<Product>(newProduct);
-      return Ok();
+        _productService.PublishProduct(product);
+        return Ok();
     }
-
 }

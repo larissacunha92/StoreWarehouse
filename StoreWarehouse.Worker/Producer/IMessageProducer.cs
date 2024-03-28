@@ -1,4 +1,4 @@
-namespace StorewWarehouse.API.Services;
+namespace StoreWarehouse.Worker.Producer;
 
 public interface IMessageProducer
 {

@@ -1,4 +1,6 @@
-using StorewWarehouse.API.Services;
+using Microsoft.EntityFrameworkCore;
+using StoreWarehouse.API.Configuration;
+using StoreWarehouse.Worker.Producer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IMessageProducer, MessageProducer>();
+builder.Services.AddDependencyInjectionConfiguration();
+builder.Services.AddDbContext<DbContext>(optionsAction: options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString(name: "DefaultConnection"), sqlServerOptions => sqlServerOptions.MigrationsAssembly("StoreWarehouse.Infra")));
 
 var app = builder.Build();
 
